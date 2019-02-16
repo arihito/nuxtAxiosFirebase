@@ -7,7 +7,7 @@
       <pre>{{now}}</pre>
       <div class="links">
         <router-link to="/other" class="button--green">Go to Other</router-link>
-        <a href="https://github.com/nuxt/nuxt.js" target="_blank" class="button--grey">GitHub</a>
+        <router-link to="/p" class="button--grey">Go to ID PASS</router-link>
       </div>
     </div>
   </section>
