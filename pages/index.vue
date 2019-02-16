@@ -3,11 +3,12 @@
     <div>
       <logo />
       <h1 class="title">{{title}}</h1>
-      <h2 class="subtitle">{{message}}</h2>
+      <h2 class="subtitle">{{$store.state.message}}</h2>
       <pre>{{now}}</pre>
       <div class="links">
         <router-link to="/other" class="button--green">Go to Other</router-link>
         <router-link to="/p" class="button--grey">Go to ID PASS</router-link>
+        <button @click="doAction" class="button--grey">clicked:{{$store.state.counter}}</button>
       </div>
     </div>
   </section>
@@ -23,7 +24,7 @@ export default {
   data: function() {
     return {
       title: 'Hello',
-      message: 'this is message',
+      message: 'This is message.',
       now: 'wait...'
     }
   },
@@ -32,6 +33,11 @@ export default {
       let d = new Date()
       this.now = d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds()
     },1000)
+  },
+  methods: {
+    doAction: function() {
+      this.$store.state.counter++
+    }
   }
 }
 </script>
@@ -70,6 +76,9 @@ export default {
 p {
   padding-top: 5px;
   font-size: 20px;
+}
+button {
+  font-size: 16px;
 }
 pre {
   padding: 10px;
