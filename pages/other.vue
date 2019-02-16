@@ -1,14 +1,10 @@
 <template>
-  <section class="container">
+  <section class='container'>
     <div>
-      <logo />
+      <Logo />
       <h1 class="title">{{title}}</h1>
-      <h2 class="subtitle">{{message}}</h2>
-      <pre>{{now}}</pre>
-      <div class="links">
-        <router-link to="/other" class="button--green">Go to Other</router-link>
-        <a href="https://github.com/nuxt/nuxt.js" target="_blank" class="button--grey">GitHub</a>
-      </div>
+      <p class="subtitle">{{message}}</p>
+      <router-link to="/" class="button--green">Go to Top</router-link>
     </div>
   </section>
 </template>
@@ -22,16 +18,9 @@ export default {
   },
   data: function() {
     return {
-      title: 'Hello',
-      message: 'this is message',
-      now: 'wait...'
+      title: 'Other',
+      message: 'これは別のページです'
     }
-  },
-  created: function() {
-    setInterval(() => {
-      let d = new Date()
-      this.now = d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds()
-    },1000)
   }
 }
 </script>
@@ -55,25 +44,11 @@ export default {
   color: #35495e;
   letter-spacing: 1px;
 }
-
 .subtitle {
   font-weight: 300;
   font-size: 42px;
   color: #526488;
   word-spacing: 5px;
   padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
-p {
-  padding-top: 5px;
-  font-size: 20px;
-}
-pre {
-  padding: 10px;
-  font-size: 18px;
-  background-color: #efefef;
 }
 </style>
