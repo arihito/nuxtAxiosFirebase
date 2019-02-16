@@ -2,12 +2,9 @@
   <section class="container">
     <div>
       <logo />
-      <h1 class="title">
-        axiosFirebase20190216
-      </h1>
-      <h2 class="subtitle">
-        My impeccable Nuxt.js project
-      </h2>
+      <h1 class="title">{{title}}</h1>
+      <h2 class="subtitle">{{message}}</h2>
+      <pre>{{now}}</pre>
       <div class="links">
         <a
           href="https://nuxtjs.org/"
@@ -30,6 +27,19 @@ import Logo from '~/components/Logo.vue'
 export default {
   components: {
     Logo
+  },
+  data: function() {
+    return {
+      title: 'Hello',
+      message: 'this is message',
+      now: 'wait...'
+    }
+  },
+  created: function() {
+    setInterval(() => {
+      let d = new Date()
+      this.now = d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds()
+    },1000)
   }
 }
 </script>
@@ -64,5 +74,14 @@ export default {
 
 .links {
   padding-top: 15px;
+}
+p {
+  padding-top: 5px;
+  font-size: 20px;
+}
+pre {
+  padding: 10px;
+  font-size: 18px;
+  background-color: #efefef;
 }
 </style>
