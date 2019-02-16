@@ -3,12 +3,35 @@
     <div>
       <logo />
       <h1 class="title">{{title}}</h1>
-      <h2 class="subtitle">{{$store.state.message}}</h2>
+      <h2 class="subtitle">{{message}}</h2>
       <pre>{{now}}</pre>
       <div class="links">
-        <router-link to="/other" class="button--green">Go to Other</router-link>
-        <router-link to="/p" class="button--grey">Go to ID PASS</router-link>
-        <button @click="doAction" class="button--grey">clicked:{{$store.state.counter}}</button>
+        <router-link to="/other" 
+          class="button--green">
+          Go to Other</router-link>
+        <router-link to="/p" 
+          class="button--grey">
+          Go to ID PASS</router-link>
+        <button @click="doAction" 
+          class="button--grey">
+          clicked:{{$store.state.counter}}</button>
+      </div>
+      <div class='links'>
+        <h2 class="subtitle">{{$store.state.message}}</h2>
+        <pre>{{$store.state.counter}}</pre>
+        <div class="flex">
+          <button @click="$store.commit(
+            {type:'count',message:'add+3',add:3})" 
+          class="button--grey">+3</button>
+          <button @click="$store.commit(
+            {type:'count',message:'add+5',add:5})" 
+          class="button--grey">+5</button>
+          <button @click="$store.commit(
+            {type:'count',message:'add+10',add:10})" 
+          class="button--grey">＋10</button>
+          <button @click="$store.commit('reset')" 
+          class="button--grey">Reset</button>
+        </div>
       </div>
     </div>
   </section>
@@ -84,5 +107,10 @@ pre {
   padding: 10px;
   font-size: 18px;
   background-color: #efefef;
+}
+.flex {
+  padding-top: 15px;
+  display: flex;
+  justify-content: space-between;
 }
 </style>

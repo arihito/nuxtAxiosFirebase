@@ -7,6 +7,15 @@ const createStore = () => {
         message: 'counter number.',
         counter: 0
       }
+    },
+    mutations: {
+      count: function (state, payload) {
+        state.message = payload.message
+        state.counter += payload.add
+      },
+      reset: function (state) {
+        state.counter = 0
+      }
     }
   })
 }
