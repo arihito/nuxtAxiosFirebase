@@ -17,18 +17,11 @@
           clicked:{{$store.state.counter}}</button>
       </div>
       <div class='links'>
-        <h2 class="subtitle">{{$store.state.message}}</h2>
         <pre>{{$store.state.counter}}</pre>
         <div class="flex">
-          <button @click="$store.commit(
-            {type:'count',message:'add+3',add:3})" 
-          class="button--grey">+3</button>
-          <button @click="$store.commit(
-            {type:'count',message:'add+5',add:5})" 
-          class="button--grey">+5</button>
-          <button @click="$store.commit(
-            {type:'count',message:'add+10',add:10})" 
-          class="button--grey">＋10</button>
+          <button @click="$store.dispatch('rand')"
+          class="button--green">Random</button>
+          <h2 class="subtitle">{{$store.state.message}}</h2>
           <button @click="$store.commit('reset')" 
           class="button--grey">Reset</button>
         </div>
