@@ -6,23 +6,23 @@
       <h2 class="subtitle">{{message}}</h2>
       <pre>{{now}}</pre>
       <div class="links">
-        <router-link to="/other" 
+        <router-link to="/memo" 
           class="button--green">
-          Go to Other</router-link>
+          Go to Memo</router-link>
         <router-link to="/p" 
           class="button--grey">
           Go to ID PASS</router-link>
         <button @click="doAction" 
           class="button--grey">
-          clicked:{{$store.state.counter}}</button>
+          clicked:{{$store.state.rand.counter}}</button>
       </div>
       <div class='links'>
-        <pre>{{$store.state.counter}}</pre>
+        <pre>{{$store.state.rand.counter}}</pre>
         <div class="flex">
-          <button @click="$store.commit('rand')"
+          <button @click="$store.commit('rand/rand')"
           class="button--green">Random</button>
-          <h2 class="subtitle">{{$store.state.message}}</h2>
-          <button @click="$store.commit('reset')" 
+          <h2 class="subtitle">{{$store.state.rand.message}}</h2>
+          <button @click="$store.commit('rand/reset')" 
           class="button--grey">Reset</button>
         </div>
       </div>
@@ -52,7 +52,7 @@ export default {
   },
   methods: {
     doAction: function() {
-      this.$store.state.counter++
+      this.$store.commit('rand/increment')
     }
   }
 }

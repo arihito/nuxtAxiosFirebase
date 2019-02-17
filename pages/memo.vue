@@ -19,8 +19,8 @@ export default {
   },
   data: function() {
     return {
-      title: 'Other',
-      message: 'これは別のページです'
+      title: 'Memo',
+      message: 'これはメモを追加するページです'
     }
   }
 }
