@@ -19,7 +19,7 @@
       <div class='links'>
         <pre>{{$store.state.counter}}</pre>
         <div class="flex">
-          <button @click="$store.dispatch('rand')"
+          <button @click="$store.commit('rand')"
           class="button--green">Random</button>
           <h2 class="subtitle">{{$store.state.message}}</h2>
           <button @click="$store.commit('reset')" 
