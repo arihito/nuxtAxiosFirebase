@@ -8,22 +8,22 @@
       <div class="links">
         <router-link to="/memo" 
           class="button--green">
-          Go to Memo</router-link>
-        <router-link to="/p" 
-          class="button--grey">
-          Go to ID PASS</router-link>
-        <button @click="doAction" 
-          class="button--grey">
-          clicked:{{$store.state.rand.counter}}</button>
+          Memo</router-link>
+        <router-link to="/p/test/abcd" 
+          class="button--green">
+          Show ID/PASS</router-link>
+        <a href='https://ja.nuxtjs.org/guide' target="_blank" class="button--green">Nuxt.js Guide</a>
       </div>
       <div class='links'>
         <pre>{{$store.state.rand.counter}}</pre>
         <div class="flex">
+          <button @click="doAction" 
+            class="button--grey">
+            clicked +1: {{$store.state.rand.counter}}</button>
           <button @click="$store.commit('rand/rand')"
-          class="button--green">Random</button>
-          <h2 class="subtitle">{{$store.state.rand.message}}</h2>
+            class="button--grey">Random {{$store.state.rand.message}}</button>
           <button @click="$store.commit('rand/reset')" 
-          class="button--grey">Reset</button>
+            class="button--grey">Reset</button>
         </div>
       </div>
     </div>
@@ -84,9 +84,11 @@ export default {
   color: #526488;
   word-spacing: 5px;
   padding-bottom: 15px;
+  padding-left: 10px;
 }
 
 .links {
+  width: 500px;
   padding-top: 15px;
 }
 p {
@@ -96,6 +98,10 @@ p {
 button {
   font-size: 16px;
 }
+.button--grey {
+  margin-left: 0px;
+  margin-right: 5px;
+}
 pre {
   padding: 10px;
   font-size: 18px;
@@ -104,6 +110,6 @@ pre {
 .flex {
   padding-top: 15px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 </style>

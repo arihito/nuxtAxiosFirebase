@@ -29,6 +29,14 @@ export default {
     return {
       title: 'Login'
     }
+  },
+  computed: {
+    message: function () {
+      let id   = this.$route.params.id
+      let pass = this.$route.params.pass
+      console.log('***********result:' + id + pass + '***********')
+      return 'ID:' + id + ' / PASSWORD:' + pass
+    } 
   }
 }
 </script>

@@ -4,8 +4,7 @@
       <Logo />
       <h1 class="title">{{title}}</h1>
       <p class="subtitle">{{message}}</p>
-      <router-link to="/" class="button--green">Go to Top</router-link>
-      <a href='https://ja.nuxtjs.org/guide' target="_blank" class="button--green">Nuxt.js Guide</a>
+      <router-link to="/" class="button--green">Go to Top</router-link>      
     </div>
   </section>
 </template>

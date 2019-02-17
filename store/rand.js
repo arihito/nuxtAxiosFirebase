@@ -14,6 +14,6 @@ export const mutations = {
   },
   reset: function (state) {
     state.counter = 0;
-    state.message = 'reset now ...'
+    state.message = ': reset now'
   }
 }
