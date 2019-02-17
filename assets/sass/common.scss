@@ -1,0 +1,147 @@
+@import 'variable';
+
+html {
+  font-family: $fontS;
+  font-size: 16px;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.container {
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.title {
+  font-family: $fontQ;
+  display: block;
+  font-weight: 300;
+  font-size: 100px;
+  color: #35495e;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  font-weight: 300;
+  font-size: 42px;
+  color: #526488;
+  word-spacing: 5px;
+  padding-bottom: 15px;
+}
+
+.links {
+  width: 500px;
+  padding-top: 15px;
+}
+
+.flex {
+  padding-top: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+pre {
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  padding: 10px;
+  font-size: 18px;
+  background-color: #efefef;
+  border-radius: 4px;
+  color: #666;
+  font-weight: bold;
+}
+
+p {
+  padding-top: 5px;
+  font-size: 20px;
+}
+
+button {
+  font-size: 16px;
+}
+
+@mixin button ($color) {
+  display: inline-block;
+  border-radius: 4px;
+  border: 1px solid $color;
+  color: $color;
+  text-decoration: none;
+  padding: 10px 30px;
+  margin: 0 5px 5px 5px;
+  &:hover {
+    color: $white;
+    background-color: $color;
+  }
+}
+.button--green {@include button ($green);}
+.button--grey {@include button ($mosGreen);}
+.button--lightGreen {@include button ($lightGreen);}
+.button--grey6 {@include button ($grey6);}
+
+
+input[type=text] {
+  padding: 22px 10px;
+}
+
+th,td {
+  padding: 10px;
+}
+.thTitle {
+  background: lighten($lightGreen,40%);
+  border-left: 5px solid lighten($lightGreen,20%);
+  padding: 12px;
+  font-weight: bold;
+  color: $mosGreen;
+}
+.archive { 
+  margin-bottom: 15px;
+  border-radius: 4px;
+  border: 1px solid $lightGreen;
+  li {
+    padding: 10px;
+    border-bottom: 1px dotted $greyc;
+    &::before {
+      content: '■ ';
+      color: lighten($green, 30%);
+    }
+    &:nth-child(even) {
+      background-color: lighten($lightGreen, 45%);
+    }
+    &:hover {
+      background-color: lighten($lightGreen, 40%);
+    }
+    span {
+      font-size: 6px;
+      strong {
+        cursor: pointer;
+        font-size: 16px;
+        color: $grey6;
+        &:hover {
+          color: $green;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.del-enter-active, .del-leave-active {
+  transition: opacity .5s;
+}
+.del-enter, .del-leave-to {
+  opacity: 0
+}

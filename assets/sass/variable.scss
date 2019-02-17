@@ -1,0 +1,39 @@
+// Import a Google Font
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+
+// Nuxt brand colors
+$white: #ffffff;
+$greye: #efefef;
+$greyd: #dddddd;
+$greyc: #cccccc;
+$greya: #aaaaaa;
+$grey9: #999999;
+$grey6: #666666;
+$grey3: #333333;
+$black: #000000;
+
+$green: #3b8070;
+$mosGreen: #35495e;
+$lightGreen: #41b883;
+
+// Update Bulma's global variables
+$fontS: 'Source Sans Pro',
+-apple-system,
+BlinkMacSystemFont,
+'Segoe UI',
+Roboto,
+'Helvetica Neue',
+Arial,
+sans-serif;
+
+$fontQ: 'Quicksand',
+'Source Sans Pro',
+-apple-system,
+BlinkMacSystemFont,
+'Segoe UI',
+Roboto,
+'Helvetica Neue',
+Arial,
+sans-serif;
+
+@import "~/node_modules/bulma";

@@ -8,7 +8,9 @@ export const mutations = {
   // 記事情報を配列の手前に追加
   insert: function (state, obj) {
     let d = new Date()
-    let fmt = d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate() + ' ' + d.getHours() + ':' + d.getMinutes()
+    let w = d.getDay()
+    const wja = ['日', '月', '火', '水', '木', '金', '土']
+    let fmt = d.getFullYear() + '年' + (d.getMonth() + 1) + '月' + d.getDate() + '日(' + wja[w] + ') ' + d.getHours() + '時' + d.getMinutes() + '分'
     state.memo.unshift({
       title: obj.title,
       content: obj.content,

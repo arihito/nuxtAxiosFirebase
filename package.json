@@ -11,11 +11,15 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "bulma": "^0.7.4",
     "cross-env": "^5.2.0",
     "nuxt": "^2.4.0",
     "vuex-persistedstate": "^2.5.4"
   },
   "devDependencies": {
-    "nodemon": "^1.18.9"
+    "node-sass": "^4.11.0",
+    "nodemon": "^1.18.9",
+    "nuxt-sass-resources-loader": "^2.0.5",
+    "sass-loader": "^7.1.0"
   }
 }

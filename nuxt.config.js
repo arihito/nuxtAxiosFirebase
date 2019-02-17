@@ -28,6 +28,10 @@ module.exports = {
   ** Global CSS
   */
   css: [
+    {
+      src: '~/assets/sass/common.scss',
+      lang: 'scss'
+    },
   ],
 
   /*
@@ -40,6 +44,7 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+    ['nuxt-sass-resources-loader',['~/assets/sass/variable.scss',]],
   ],
 
   /*
