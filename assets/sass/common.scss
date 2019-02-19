@@ -70,14 +70,11 @@ p {
   font-size: 20px;
 }
 
-button {
-  font-size: 16px;
-}
-
 @mixin button ($color) {
   display: inline-block;
   border-radius: 4px;
   border: 1px solid $color;
+  font-size: 16px;
   color: $color;
   text-decoration: none;
   padding: 10px 30px;
@@ -85,6 +82,9 @@ button {
   &:hover {
     color: $white;
     background-color: $color;
+  }
+  &:focus {
+    outline-color: $green;
   }
 }
 .button--green {@include button ($green);}
@@ -103,7 +103,7 @@ th,td {
 .thTitle {
   background: lighten($lightGreen,40%);
   border-left: 5px solid lighten($lightGreen,20%);
-  padding: 12px;
+  padding: 12px 30px;
   font-weight: bold;
   color: $mosGreen;
 }
@@ -139,9 +139,15 @@ th,td {
   }
 }
 
-.del-enter-active, .del-leave-active {
+.nav {
+  display: flex;
+  justify-content: space-between;
+  height: 51px;
+}
+
+.btn-enter-active, .btn-leave-active {
   transition: opacity .5s;
 }
-.del-enter, .del-leave-to {
+.btn-enter, .btn-leave-to {
   opacity: 0
 }
