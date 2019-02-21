@@ -9,10 +9,12 @@
         <router-link to="/memo" 
           class="button--green">
           Memo</router-link>
+        <router-link to="/axios" 
+          class="button--green">
+          Axios Test</router-link>
         <router-link to="/p/test/abcd" 
           class="button--green">
           Show ID/PASS</router-link>
-        <a href='https://ja.nuxtjs.org/guide' target="_blank" class="button--green">Nuxt.js Guide</a>
       </div>
       <div class='links'>
         <pre>{{$store.state.rand.counter}}</pre>

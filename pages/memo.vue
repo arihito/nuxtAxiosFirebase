@@ -81,7 +81,7 @@ export default {
       message: 'これはメモを追加するページです',
       title: '',
       content: '',
-      num_per_page: 7,
+      num_per_page: 5,
       find_flg: false,
       sel_flg: false
     }
