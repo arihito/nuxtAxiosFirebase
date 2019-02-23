@@ -30,7 +30,7 @@
 <script>
 import Logo from '../components/Logo.vue'
 const axios = require('axios')
-const url   = "https://nuxttest20190223.firebaseio.com/person"
+const url   = "https://nuxttest20190223.firebaseio.com/person.json?orderBy=%22age%22"
 
 export default {
   components: {
@@ -46,20 +46,17 @@ export default {
   },
   methods: {
     getSearch: function () {
-      let mail_url = url + '/' + this.mail + '.json'
-      axios.get(mail_url).then((res) => {
-        this.message = '検索メール：' + this.mail
+      let range = this.mail.split(',')
+      let age_url = url + "&startAt=" + range[0] + "&endAt=" + range[1]
+      axios.get(age_url).then((res) => {
+        this.message = '範囲：' + range[0] + ' < age < ' + range[1]
         console.log(res.data)
-        //＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊ Objectのキーにthisが使えない
-        // this.persons = { this.mail : res.data } 
+        this.persons = res.data
       }).catch((error) => {
         this.message = "Error!"
+        this.persons = {}
       })
     }
-  },
-  asyncData: async function () {
-      let result = await axios.get(url + ".json")
-      return { persons: result.data }
   }
 }
 </script>
