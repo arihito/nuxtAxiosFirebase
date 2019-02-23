@@ -92,13 +92,31 @@ p {
 .button--lightGreen {@include button ($lightGreen);}
 .button--grey6 {@include button ($grey6);}
 
-
 input[type=text] {
   padding: 22px 10px;
+}
+.inputAxios {
+  width: auto;
 }
 
 th,td {
   padding: 10px;
+}
+.axiosTable {
+  border-collapse: collapse;
+  width: 296px;
+  margin: 0 auto 20px;
+  tr:nth-child(even) {
+    background-color: $greye;
+  }
+  th {
+    text-align: center;
+    background-color: $greya;
+    color: $white;
+  }
+  th,td {
+    border: 1px solid $greye;
+  }
 }
 .thTitle {
   background: lighten($lightGreen,40%);
