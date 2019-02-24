@@ -11,10 +11,10 @@
           Memo</router-link>
         <router-link to="/axios" 
           class="button--green">
-          Axios Test</router-link>
+          Axios & Firebase</router-link>
         <router-link to="/p/test/abcd" 
           class="button--green">
-          Show ID/PASS</router-link>
+          OAuth Google</router-link>
       </div>
       <div class='links'>
         <pre>{{$store.state.rand.counter}}</pre>

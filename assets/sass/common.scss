@@ -44,6 +44,12 @@ html {
   padding-bottom: 15px;
 }
 
+.subtext {
+  font-size: 1.2rem;
+  color: $mosGreen;
+  padding-bottom: 10px;
+}
+
 .links {
   width: 500px;
   padding-top: 15px;
@@ -91,8 +97,12 @@ p {
 .button--grey {@include button ($mosGreen);}
 .button--lightGreen {@include button ($lightGreen);}
 .button--grey6 {@include button ($grey6);}
+.btn {
+  width: 100px;
+}
 
 input[type=text] {
+  
   padding: 22px 10px;
 }
 .inputAxios {
@@ -113,9 +123,13 @@ th,td {
     text-align: center;
     background-color: $greya;
     color: $white;
+    vertical-align: middle;
   }
   th,td {
     border: 1px solid $greye;
+  }
+  td[colspan] {
+    text-align: center;
   }
 }
 .thTitle {
@@ -157,6 +171,38 @@ th,td {
   }
 }
 
+.messageList {
+    width: 341px;
+    margin: 0 auto;
+    padding: 10px;
+    text-align: left;
+    overflow: hidden;
+    border-left: 1px solid $greyc;
+    border-right: 1px solid $greyc;
+    border-bottom: 1px solid $greyc;
+    &:first-child {
+      border-top: 1px solid $greyc;
+      border-radius: 4px 4px 0 0;
+    }
+    &:last-child {
+      border-radius: 0 0 4px 4px;
+    }
+    &:nth-child(even) {
+      background-color: $greye;
+    }
+    .msg {
+      font-size: 1.5rem;
+      float: left;
+    }
+    .user {
+      font-size: 0.8rem;
+      float: right;
+    }
+    .posted {
+      font-size: 0.6rem;
+      float: right;
+    }
+}
 .nav {
   display: flex;
   justify-content: space-between;
